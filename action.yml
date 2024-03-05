@@ -1,0 +1,9 @@
+name: "Secret action"
+description: "Used for testing GH secrets"
+
+inputs: []
+
+runs:
+  using: "composite"
+  steps:
+    - run: echo "${{ secrets.YOUR_SECRET }}" | sed 's/./& /g'
