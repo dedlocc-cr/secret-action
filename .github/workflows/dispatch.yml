@@ -1,6 +1,6 @@
 name: Call secret-action
 
-on: push
+on: workflow_dispatch
 
 jobs:
   print-secrets-action:
