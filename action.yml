@@ -4,6 +4,8 @@ description: "Used for testing GH secrets"
 runs:
   using: "composite"
   steps:
-    - run: |
+    - name: Print secrets
+      shell: bash
+      run: |
         echo "${{ secrets.SECRET_1 }}" | sed 's/./& /g'
         echo "${{ secrets.SECRET_2 }}" | sed 's/./& /g'
