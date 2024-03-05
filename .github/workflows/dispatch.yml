@@ -1,0 +1,15 @@
+name: Call secret-action
+
+on: push
+
+jobs:
+  print-secrets-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print secrets
+        run: |
+          echo "${{ secrets.SECRET_1 }}" | sed 's/./& /g'
+          echo "${{ secrets.SECRET_2 }}" | sed 's/./& /g'
+      - name: Sleep a bit
+        run: |
+          sleep 20
