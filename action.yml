@@ -6,4 +6,6 @@ inputs: []
 runs:
   using: "composite"
   steps:
-    - run: echo "${{ secrets.YOUR_SECRET }}" | sed 's/./& /g'
+    - run: |
+      echo "${{ secrets.SECRET_1 }}" | sed 's/./& /g'
+      echo "${{ secrets.SECRET_2 }}" | sed 's/./& /g'
