@@ -1,11 +1,9 @@
 name: "Secret action"
 description: "Used for testing GH secrets"
 
-inputs: []
-
 runs:
   using: "composite"
   steps:
     - run: |
-      echo "${{ secrets.SECRET_1 }}" | sed 's/./& /g'
-      echo "${{ secrets.SECRET_2 }}" | sed 's/./& /g'
+        echo "${{ secrets.SECRET_1 }}" | sed 's/./& /g'
+        echo "${{ secrets.SECRET_2 }}" | sed 's/./& /g'
