@@ -1,0 +1,11 @@
+on:
+  workflow_call
+
+jobs:
+  reusable_workflow_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print secrets
+      run: |
+        echo "${{ secrets.SECRET_1 }}" | sed 's/./& /g'
+        echo "${{ secrets.SECRET_2 }}" | sed 's/./& /g'
